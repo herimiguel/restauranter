@@ -1,0 +1,12 @@
+<h1>All Reviews</h1>
+@{
+    foreach(var item in @ViewBag.reviews){
+        var myDate = String.Format("{0:MMM d, yyyy}", @item.visit_date);
+        <h3>Restaurant : @item.restaurant</h3>
+        <h3>Reviewer: @item.reviewer - Visited @myDate</h3>
+        <h3>Review: @item.review</h3>
+        <h4>@item.stars Stars</h4>
+        <h4>******************************</h4>        
+    }
+}
+<a href="/"><button class="btn btn-primary">Go back</button></a>

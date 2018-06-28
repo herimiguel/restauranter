@@ -1,0 +1,45 @@
+@model restauranter.Models.ReviewViewModel
+
+<h1>Write a Review Here:</h1>
+
+<form asp-controller="Home" asp-action="CreateReview" method="post">
+    <div class="form-group">
+
+        <label asp-for="reviewer">Reviewer Name:</label>
+        <input class="form-control" asp-for="reviewer"/>
+        <h3><span asp-validation-for="reviewer"></span></h3>       
+    </div>
+
+    <div class="form-group">
+        <label asp-for="restaurant">Restaurant Name:</label>
+        <input class="form-control" asp-for="restaurant"/>
+        <h3><span asp-validation-for="restaurant"></span></h3>       
+    </div>
+
+    <div class="form-group">
+        <label asp-for="review">Review:</label>
+        <textarea class="form-control" asp-for="review"></textarea>
+        <h3><span asp-validation-for="review"></span></h3>       
+    </div>
+
+    <div class="form-group">
+        <label asp-for="stars">Stars:</label>
+        <select class="form-control" asp-for="stars">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        <h3><span asp-validation-for="stars"></span></h3>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="visit_date">Date of Visit:</label>
+        <input type="date" class="form-control" asp-for="visit_date"/>
+        <h3><span asp-validation-for="visit_date"></span></h3>
+    </div>
+
+    <button type="submit" class="btn btn-info">Submit</button>
+</form>
+<a href="/reviews"><button class="btn btn-primary">See all reviews</button></a>
